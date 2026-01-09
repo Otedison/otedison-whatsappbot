@@ -1,0 +1,37 @@
+{
+  "name": "edison-whatsapp-bot",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "WhatsApp Bot with Web Dashboard",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "node -c index.js && echo '✅ Syntax check passed!'",
+    "test": "echo 'No tests configured'",
+    "lint": "node -c index.js",
+    "clean": "rm -rf auth_session/*",
+    "check": "node -c index.js",
+    "reset": "rm -rf auth_session node_modules package-lock.json && npm install",
+    "health": "curl -s http://localhost:3001/health || echo 'Server not running'",
+    "status": "curl -s http://localhost:3001/status || echo 'Server not running'"
+  },
+  "keywords": ["whatsapp", "bot", "baileys", "express"],
+  "author": "Edison",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@whiskeysockets/baileys": "^6.7.21",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "pino": "^9.14.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
